@@ -1,0 +1,36 @@
+<script>
+
+var bankAccount = prompt("Welcome to M. G. Thomas and Sons Bank. What is your current balance? Give the amount.")
+var action = prompt("Type 1 for a deposit or 2 for a withrdawal.")
+
+if (action == 1) {
+	function deposit(addition) {
+		var added = bankAccount + addition;
+		console.log("Your balance is now $" + added + ".");
+	};
+
+	console.log(addition = prompt("Type the amount you are depositing."))
+
+}
+else {
+	function withrawal(subtraction) {
+		var subtracted = bankAccount - subtraction;
+		console.log("Your balance is now $" + subtracted + ".");
+	};
+
+	console.log(subtraction = prompt("Type the amoung you are withdrawing."))
+
+};
+
+var transactions = prompt("Type 1 for additional transactions and 2 for to end transactions.");
+String moreActions;
+switch (transactions) {
+	case 1: action = moreActions;
+			break;
+	case 2: moreActions = alert("Thank you for banking at M. G. Thomas and Sons. We wish your business to prosper.");
+			break;
+	default: moreActions = (transactions = alert("Sorry, that was an invalid choice. Please type 1 for additional transactions and 2 to end transactions");
+			break;
+};
+
+</script>
