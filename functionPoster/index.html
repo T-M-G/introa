@@ -1,0 +1,31 @@
+<script>
+
+var changeCurrency = function(itemCost, spendingMoney){
+	
+	var changeOwed = ((spendingMoney - itemCost) / 100).toFixed(2);
+	
+	if (changeOwed >= 0) {
+		var notDollars = (changeOwed % 100) / 100;
+		var dollars = Math.floor(changeOwed - notDollars);
+		var notQuarters = (notDollars % 0.25) / 0.25;
+		var quarters = Math.floor((notDollars / 0.25) - notQuarters);
+		var notDimes = ((notQuarters * 0.25) % 0.1) / 0.1;
+		var dimes = Math.floor((notQuarters / 0.1) - notDimes);
+		var notNickels = ((notDimes * 0.1) % 0.05) / 0.05;
+		var nickels = Math.floor((notDimes / 0.05) - notNickels);
+		var pennies = notDollars - ((0.25 * quarters) + (0.1 * dimes) + (0.05 * nickels));
+
+		alert("Your change is now " + dollars + " dollars, " + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, and " + pennies + " pennies.");
+	}
+	else {
+		alert("Get out! You can't fool me, you shoplifter.");
+	};
+};
+
+var itemCost = prompt("Type in cents how the item costs.");
+
+var spendingMoney = prompt("Type in cents how much money you have to spend.");
+
+changeCurrency(itemCost, spendingMoney);
+
+</script>
